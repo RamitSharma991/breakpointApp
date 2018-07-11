@@ -14,8 +14,8 @@
 		3154A8A120F4C7FF00C4BAD1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3154A8A020F4C7FF00C4BAD1 /* ShadowView.swift */; };
 		3154A8A320F4CA1600C4BAD1 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3154A8A220F4CA1600C4BAD1 /* AuthServices.swift */; };
 		31BA1C6420F33F45007E07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA1C6320F33F45007E07C5 /* AppDelegate.swift */; };
-		31BA1C6620F33F45007E07C5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA1C6520F33F45007E07C5 /* FirstViewController.swift */; };
-		31BA1C6820F33F45007E07C5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA1C6720F33F45007E07C5 /* SecondViewController.swift */; };
+		31BA1C6620F33F45007E07C5 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA1C6520F33F45007E07C5 /* FeedVC.swift */; };
+		31BA1C6820F33F45007E07C5 /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA1C6720F33F45007E07C5 /* GroupsVC.swift */; };
 		31BA1C6B20F33F45007E07C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31BA1C6920F33F45007E07C5 /* Main.storyboard */; };
 		31BA1C6D20F33F46007E07C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31BA1C6C20F33F46007E07C5 /* Assets.xcassets */; };
 		31BA1C7020F33F46007E07C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31BA1C6E20F33F46007E07C5 /* LaunchScreen.storyboard */; };
@@ -32,8 +32,8 @@
 		3154A8A220F4CA1600C4BAD1 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		31BA1C6020F33F45007E07C5 /* breakPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BA1C6320F33F45007E07C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		31BA1C6520F33F45007E07C5 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		31BA1C6720F33F45007E07C5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		31BA1C6520F33F45007E07C5 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		31BA1C6720F33F45007E07C5 /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 		31BA1C6A20F33F45007E07C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31BA1C6C20F33F46007E07C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31BA1C6F20F33F46007E07C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,8 +95,8 @@
 		31BA1C7720F3415C007E07C5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				31BA1C6520F33F45007E07C5 /* FirstViewController.swift */,
-				31BA1C6720F33F45007E07C5 /* SecondViewController.swift */,
+				31BA1C6520F33F45007E07C5 /* FeedVC.swift */,
+				31BA1C6720F33F45007E07C5 /* GroupsVC.swift */,
 				3154A89A20F4C47000C4BAD1 /* AuthVC.swift */,
 				3154A89C20F4C4A900C4BAD1 /* LoginVC.swift */,
 			);
@@ -273,12 +273,12 @@
 			files = (
 				3154A89B20F4C47000C4BAD1 /* AuthVC.swift in Sources */,
 				3154A89F20F4C4FB00C4BAD1 /* insetTextField.swift in Sources */,
-				31BA1C6820F33F45007E07C5 /* SecondViewController.swift in Sources */,
+				31BA1C6820F33F45007E07C5 /* GroupsVC.swift in Sources */,
 				3154A89D20F4C4A900C4BAD1 /* LoginVC.swift in Sources */,
 				3154A8A120F4C7FF00C4BAD1 /* ShadowView.swift in Sources */,
 				31BA1C6420F33F45007E07C5 /* AppDelegate.swift in Sources */,
 				3154A8A320F4CA1600C4BAD1 /* AuthServices.swift in Sources */,
-				31BA1C6620F33F45007E07C5 /* FirstViewController.swift in Sources */,
+				31BA1C6620F33F45007E07C5 /* FeedVC.swift in Sources */,
 				3149EB3B20F34D0200CCDE5F /* DataServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
