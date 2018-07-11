@@ -30,10 +30,9 @@
                                         <state key="normal" image="compose"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Em5-sG-ePy">
-                                        <rect key="frame" x="137.5" y="22.5" width="100" height="25"/>
+                                        <rect key="frame" x="157.5" y="22.5" width="60.5" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="3Ka-q8-Kmz"/>
-                                            <constraint firstAttribute="width" constant="100" id="KDk-Aw-N6s"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                         <color key="textColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -102,9 +101,8 @@
                                         <state key="normal" image="addNewIcon"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_groups" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bG-6l-SX8" userLabel="_groups">
-                                        <rect key="frame" x="138" y="22.5" width="100" height="25"/>
+                                        <rect key="frame" x="146" y="22.5" width="84.5" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="SlD-mV-4H5"/>
                                             <constraint firstAttribute="height" constant="25" id="vbE-fM-bkV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
@@ -193,6 +191,9 @@
                                                 <state key="normal" title="login with fb">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="fbLogin:" destination="rBq-qv-6le" eventType="touchUpInside" id="LL3-Yh-DHB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1J-4h-D42">
                                                 <rect key="frame" x="0.0" y="115" width="289" height="55"/>
@@ -201,6 +202,9 @@
                                                 <state key="normal" title="login with G+">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="googleLogin:" destination="rBq-qv-6le" eventType="touchUpInside" id="gnc-Q9-vfe"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boq-04-XxP">
                                                 <rect key="frame" x="0.0" y="180" width="289" height="40"/>
@@ -214,6 +218,10 @@
                                                 <state key="normal" title="  by Email" image="emailIcon">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="emailLogin:" destination="rBq-qv-6le" eventType="touchUpInside" id="8nq-4L-0Zk"/>
+                                                    <action selector="signInWithEmail:" destination="ihD-QS-3C9" eventType="touchUpInside" id="Wre-jo-jYo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -244,6 +252,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jU-XO-qbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ihD-QS-3C9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1617" y="0.0"/>
         </scene>
@@ -262,17 +271,20 @@
                                     <constraint firstAttribute="width" constant="40" id="3w0-Qf-PyE"/>
                                 </constraints>
                                 <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="closeBtn:" destination="ehS-E4-QLC" eventType="touchUpInside" id="dyj-h5-HqQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAJ-vJ-qLA">
-                                <rect key="frame" x="127" y="243.5" width="120" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="ds3-B4-riC"/>
-                                </constraints>
+                                <rect key="frame" x="144.5" y="243.5" width="85" height="36"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                 <state key="normal" title="SIGN_IN">
                                     <color key="titleColor" red="0.015686274510000001" green="0.6705882353" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.015686274509803921" green="0.6705882352941176" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInBtn:" destination="ehS-E4-QLC" eventType="touchUpInside" id="2Ry-M0-LdO"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dU4-JI-HkQ">
                                 <rect key="frame" x="20" y="70" width="335" height="153.5"/>
@@ -318,6 +330,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iF7-Qx-DWD"/>
                     </view>
+                    <connections>
+                        <outlet property="emailFeild" destination="ehT-z7-DWL" id="efY-aV-cIq"/>
+                        <outlet property="passwordField" destination="Xmd-wY-gm0" id="Dkp-Zp-FWa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yjq-T1-fmo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
