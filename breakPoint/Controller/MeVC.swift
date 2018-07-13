@@ -13,6 +13,7 @@ class MeVC: UIViewController {
     @IBOutlet weak var imageOutlet: UIImageView!
     @IBOutlet weak var emailOutlet: UILabel!
     @IBOutlet weak var tableviewOutlet: UITableView!
+    @IBOutlet weak var logOutOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
