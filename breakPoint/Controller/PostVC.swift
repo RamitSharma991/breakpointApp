@@ -22,9 +22,13 @@ class PostVC: UIViewController {
         super.viewDidLoad()
         textViewlLbl.delegate = self
         sendOutlet.bindToKeyboard()
-
-        // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.emailLbl.text = Auth.auth().currentUser?.email
+    }
+    
+    
     @IBAction func sendBtn(_ sender: Any) {
         if textViewlLbl.text != nil && textViewlLbl.text != "type your thing here ...." {
             sendOutlet.isEnabled = false
