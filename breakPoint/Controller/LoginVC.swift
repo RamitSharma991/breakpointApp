@@ -21,7 +21,6 @@ class LoginVC: UIViewController {
         emailFeild.delegate = self
         passwordField.delegate = self
         
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func signInBtn(_ sender: Any) {
