@@ -285,6 +285,9 @@
                                             <constraint firstAttribute="height" constant="35" id="DIO-Qg-X8c"/>
                                         </constraints>
                                         <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="closeBtn:" destination="83O-Lj-13p" eventType="touchUpInside" id="AKy-aE-ipr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -420,7 +423,6 @@
                         <viewLayoutGuide key="safeArea" id="2FC-IX-NoH"/>
                     </view>
                     <connections>
-                        <outlet property="closeBtn" destination="AQO-BW-d0d" id="NVw-RP-vHm"/>
                         <outlet property="descriptionTextField" destination="wCd-Qk-tTR" id="Qco-t9-UqU"/>
                         <outlet property="doneOutlet" destination="V0E-fM-wyl" id="xpT-7j-9yv"/>
                         <outlet property="emailSearchTextField" destination="WYC-4c-64M" id="3Bz-dj-IUs"/>
