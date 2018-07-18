@@ -19,6 +19,7 @@ class CreateGroupsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var emailArray = [String]()
+    var chosenUserArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,11 @@ class CreateGroupsVC: UIViewController {
         tableView.dataSource = self
         emailSearchTextField.delegate = self
         emailSearchTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        doneOutlet.isHidden = true
     }
     
     @objc func textDidChange() {
@@ -36,7 +42,7 @@ class CreateGroupsVC: UIViewController {
             DataService.instance.getEmail(forSearchQuery: emailSearchTextField.text!, handler: { (returnedEmailArray) in
                 self.emailArray = returnedEmailArray
                 self.tableView.reloadData()
-                })
+            })
         }
     }
     @IBAction func doneBtn(_ sender: Any) {
@@ -58,10 +64,34 @@ extension CreateGroupsVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell") as? UserCell else { return UITableViewCell() }
         let profileImage = UIImage(named: "defaultProfileImage")
         
+        if chosenUserArray.contains(emailArray[indexPath.row]) {
         cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row], isSelected: true)
-    return cell
     }
+        
+        else {
+            cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row], isSelected: false)
+
+        }
+        return cell
+}
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return }
+        if !chosenUserArray.contains(cell.emailLbl.text!) {
+            chosenUserArray.append(cell.emailLbl.text!)
+            groupMemberLbl.text = chosenUserArray.joined(separator: ", ")
+            doneOutlet.isHidden = false
+        } else {
+            chosenUserArray = chosenUserArray.filter({ $0 != cell.emailLbl.text! })
+            
+            if chosenUserArray.count >= 1{
+                groupMemberLbl.text = chosenUserArray.joined(separator: ", ")
+            }else {
+                groupMemberLbl.text = "add people to your group"
+                doneOutlet.isHidden = true
+            }
+        }
+    }
 }
 extension CreateGroupsVC: UITextFieldDelegate {
     
