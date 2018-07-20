@@ -49,7 +49,7 @@ class CreateGroupsVC: UIViewController {
     @IBAction func doneBtn(_ sender: Any) {
         if titleTextField.text != "" && descriptionTextField.text != "" {
             
-            DataService.instance.getIds(firUsernames: chosenUserArray) { (idsArray) in
+            DataService.instance.getIds(forUsernames: chosenUserArray) { (idsArray) in
                 var userIds = idsArray
                 userIds.append((Auth.auth().currentUser?.uid)!)
                 

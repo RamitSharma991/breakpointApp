@@ -49,7 +49,9 @@ class DataService {
     
     func uploadPost(withMessage message: String, forID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping(_ status: Bool) ->()) {
         if groupKey != nil {
-            //send to group reference
+//send to group reference
+            REF_GROUPS.child(groupKey!).child("messages").childByAutoId().updateChildValues(["content": message, "senderId": uid])
+            sendComplete(true)
             
         } else {
             REF_FEED.childByAutoId().updateChildValues(["content": message, "senderId": uid])
@@ -74,7 +76,24 @@ class DataService {
         }
     }
 
-func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()) {
+    func getAllMessagesFor(desiredGroup: Group, handler: @escaping (_ messageArray: [Message]) -> ()) {
+        var groupMessageArray = [Message]()
+        REF_GROUPS.child(desiredGroup.key).child("messages").observeSingleEvent(of: .value) { (groupMessageSnapshot) in
+            guard let groupMessageSnapshot = groupMessageSnapshot.children.allObjects as? [DataSnapshot]
+                else {return}
+            
+            for groupMessage in groupMessageSnapshot {
+                let content = groupMessage.childSnapshot(forPath: "content").value as! String
+                let senderId = groupMessage.childSnapshot(forPath: "senderId").value as! String
+                let groupMessage = Message(content: content, senderId: senderId)
+                groupMessageArray.append(groupMessage)
+            }
+        
+        handler(groupMessageArray)
+        }
+    }
+
+    func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()) {
     var emailArray = [String]()
     REF_USERS.observe(.value) { (userSnapshot) in
         guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
@@ -92,7 +111,7 @@ func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [S
     
     }
     
-    func getIds(firUsernames usernames: [String], handler: @escaping (_ uidArray: [String]) -> ()) {
+    func getIds(forUsernames usernames: [String], handler: @escaping (_ uidArray: [String]) -> ()) {
      
         REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
             var idArray = [String]()

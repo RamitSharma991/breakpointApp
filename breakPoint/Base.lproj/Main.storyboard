@@ -551,7 +551,6 @@
         <!--Group FeedVC-->
         <scene sceneID="oXY-yx-RzW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iSr-Zr-a33" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="groupFeedVC" id="Fs3-a1-Oto" customClass="groupFeedVC" customModule="breakPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XY8-oN-RzP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -577,7 +576,7 @@
                                         </constraints>
                                         <state key="normal" image="backIcon"/>
                                         <connections>
-                                            <action selector="backButton" destination="Fs3-a1-Oto" eventType="touchUpInside" id="axJ-H0-kfE"/>
+                                            <action selector="backButton:" destination="Fs3-a1-Oto" eventType="touchUpInside" id="HVe-Hw-lnf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -719,6 +718,7 @@
                         <outlet property="tableView" destination="8Bw-vS-lR6" id="tf0-kE-3GQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iSr-Zr-a33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="376.80000000000001" y="1080.8095952023989"/>
         </scene>
