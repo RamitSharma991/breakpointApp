@@ -48,4 +48,23 @@ extension GroupsVC: UITableViewDelegate, UITableViewDataSource {
 //cell.configureCell(title: "Nerd Herd", description: "As Nerdy as they come", memberCount: 3)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let groupFeedVC = storyboard?.instantiateViewController(withIdentifier: "groupFeedVC") as? groupFeedVC else { return }
+        groupFeedVC.initData(forGroup: groupsArray[indexPath.row])
+            present(groupFeedVC, animated: true, completion: nil)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
